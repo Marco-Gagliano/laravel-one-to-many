@@ -36,7 +36,7 @@ class UpdatePostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
 
-            //1. Elimino la foreign key
+            //1. Elimino la foreign key (N.B. nel "nome_id" si aspetta un array, altrimenti il terminale da errore)
             $table->dropForeign(['category_id']);
 
             //2. Elimino la colonna
