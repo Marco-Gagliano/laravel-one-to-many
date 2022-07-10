@@ -3,7 +3,7 @@
 @section('content')
     <div class="container my-5">
         <div class="row">
-            <div class="col-6 offset-3">
+            <div class="col-8 offset-2">
 
                 @if ($errors->any())
                     <div class="alert-danger">
@@ -51,12 +51,20 @@
                         <p class="text-danger fw-bold" id=error-description></p>
                     </div>
 
-                    <select class="form-select my-3" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                    <div class="select-category mb-3">
+                        <label for=""><h6>Categoria: </h6></label>
+                        <select class="form-select my-3" name="category_id">
+
+                            <option value="">Selezionare Categoria</option>
+                            @foreach ($categories as $category)
+                                <option @if ($category->id == old('category_id', $post->category ? $post->category->id : '' ))
+                                        selected
+                                        @endif
+                                        value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+
+                        </select>
+                    </div>
 
                     <button type="submit" class="btn btn-success fw-bold">Modifica</button>
 
