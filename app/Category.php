@@ -11,6 +11,6 @@ class Category extends Model
     // Perchè avvenga tutto ciò, bisogna creare un metodo publico con il nome della relazione
 
     public function category(){
-        return $this->belongsTo('App\Category');
+        return $this->hasMany('App\Post');
     }
 }
