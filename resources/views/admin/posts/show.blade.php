@@ -6,7 +6,7 @@
         <h1>{{$post->title}}</h1>
 
         @if ($post->category)
-            <h3>{{$post->category->name}}</h3>
+            <h3>Categoria: {{$post->category->name}}</h3>
         @endif
 
         <p>{{$post->description}}</p>

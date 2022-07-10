@@ -47,28 +47,27 @@
         </table>
         <div class="paginate d-flex justify-content-center">{{$posts->links()}}</div>
 
-         <div class="category-list">
-            @foreach ($categories as $category)
-            <h4>{{$category->name}}</h4>
+        <div class="category-list ">
+            <h2 class="mb-5">Elenco lista post per categoria:</h2>
+            <div class="row">
+                @foreach ($categories as $category)
+                    <div class="list col-4">
+                        <h4><strong>{{$category->name}}</strong></h4>
 
-            <ul>
-                @foreach ($category->posts as $post)
-                    <li>
-                        <a href="{{route('admin.posts.show', $post)}}">{{$post->title}}</a>
-                    </li>
+                            <ul>
+
+                                @forelse ($category->posts as $post)
+                                    <li>
+                                        <a href="{{route('admin.posts.show', $post)}}">{{$post->title}}</a>
+                                    </li>
+                                @empty
+                                    <p>Non sono presenti post per questa categoria</p>
+                                @endforelse
+                            </ul>
+                    </div>
                 @endforeach
-
-                @forelse ($category->posts as $post)
-                    <li>
-                        <a href="{{route('admin.posts.show', $post)}}">{{$post->title}}</a>
-                    </li>
-                @empty
-                    <p>Non sono presenti post per questa categoria</p>
-                @endforelse
-            </ul>
-
-            @endforeach
-         </div>
+            </div>
+        </div>
 
     </div>
 @endsection

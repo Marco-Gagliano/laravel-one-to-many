@@ -10,9 +10,21 @@
 
 // CSS
 
+.navbar {
+    background-color: #000000;
+
+    a {
+        color: #F90;
+    }
+}
+
 
 ul {
     list-style: none;
+
+    a {
+        color: #F90;
+    }
 }
 
 .pagination {

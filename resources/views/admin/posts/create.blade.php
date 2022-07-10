@@ -47,6 +47,20 @@
                 <p class="text-danger fw-bold" id=error-description></p>
             </div>
 
+            <div class="select-category mb-3">
+                <label for=""><h6>Categoria: </h6></label>
+                <select class="form-select my-3" name="category_id">
+
+                    <option value="">Selezionare Categoria</option>
+                    @foreach ($categories as $category)
+                        <option @if ($category->id == old('category_id')) selected
+                                @endif
+                                value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+
+                </select>
+            </div>
+
             <button type="submit" class="btn btn-success fw-bold">Invia</button>
 
         </form>

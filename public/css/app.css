@@ -10953,8 +10953,20 @@ a.text-dark:focus {
   }
 }
 
+.navbar {
+  background-color: #000000;
+}
+
+.navbar a {
+  color: #F90;
+}
+
 ul {
   list-style: none;
+}
+
+ul a {
+  color: #F90;
 }
 
 .pagination {

@@ -25,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home')}}">
                     Vai alla Pagina
@@ -36,7 +36,7 @@
                         Visualizza i dati
                     </a>
 
-                    <a class="navbar-brand text-primary" href="{{ route('admin.posts.create')}}">
+                    <a class="navbar-brand text-light" href="{{ route('admin.posts.create')}}">
                         <strong> Crea un nuovo Post</strong>
                     </a>
                 @endauth
@@ -65,7 +65,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-uppercase" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
