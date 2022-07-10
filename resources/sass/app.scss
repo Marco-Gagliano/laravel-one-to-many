@@ -6,3 +6,30 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+// CSS
+
+
+ul {
+    list-style: none;
+}
+
+.pagination {
+    border: 1px solid #ffffff;
+}
+
+.page-item.active .page-link{
+    background-color: #F90;
+    color: #000000;
+}
+
+.page-item a{
+    background-color: #000000;
+    color: #F90;
+}
+
+.page-item.disabled .page-link{
+    background-color: #000000;
+    color: #FFFFFF;
+}

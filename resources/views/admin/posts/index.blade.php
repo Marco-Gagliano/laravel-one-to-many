@@ -27,7 +27,7 @@
                     <tr>
                         <th scope="row">{{$post->id}}</th>
                         <td>{{$post->title}}</td>
-                        <td>{{$post->category->name}}</td>
+                        <td>{{$post->category ? $post->category->name : '-'}}</td>
                         <td>
                             <a class="btn btn-primary" href="{{route('admin.posts.show', $post)}}">MOSTRA</a>
                             <a class="btn btn-warning" href="{{route('admin.posts.edit', $post)}}">MODIFICA</a>
@@ -46,6 +46,29 @@
             </tbody>
         </table>
         <div class="paginate d-flex justify-content-center">{{$posts->links()}}</div>
+
+         <div class="category-list">
+            @foreach ($categories as $category)
+            <h4>{{$category->name}}</h4>
+
+            <ul>
+                @foreach ($category->posts as $post)
+                    <li>
+                        <a href="{{route('admin.posts.show', $post)}}">{{$post->title}}</a>
+                    </li>
+                @endforeach
+
+                @forelse ($category->posts as $post)
+                    <li>
+                        <a href="{{route('admin.posts.show', $post)}}">{{$post->title}}</a>
+                    </li>
+                @empty
+                    <p>Non sono presenti post per questa categoria</p>
+                @endforelse
+            </ul>
+
+            @endforeach
+         </div>
 
     </div>
 @endsection
